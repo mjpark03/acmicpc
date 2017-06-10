@@ -50,6 +50,12 @@ public class KnightMove {
 
                     if(tempX >= 0 && tempX < n && tempY >= 0 && tempY < n && visited[tempX][tempY] == 0) {
                         visited[tempX][tempY] = visited[x][y] + 1;
+
+                        if(tempX == Integer.parseInt(uv[0]) && tempY == Integer.parseInt(uv[1])) {
+                            queue.clear();
+                            break;
+                        }
+
                         Point next = new Point(tempX, tempY);
                         queue.offer(next);
                     }
